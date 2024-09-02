@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
+import Image from "next/image";
 // Local Data
 import data from "../../data/portfolio.json";
 
@@ -37,17 +38,21 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       setTheme(theme === "dark" ? "light" : "dark")
                     }
                   >
-                    <img
+                    <Image
                       className="h-6"
                       src={`/images/${
                         theme === "dark" ? "moon.svg" : "sun.svg"
                       }`}
-                    ></img>
+                      alt="theme"
+                      layout="fill"
+                      width={24}
+                      height={24}
+                    ></Image>
                   </Button>
                 )}
 
                 <Popover.Button>
-                  <img
+                  <Image
                     className="h-5"
                     src={`/images/${
                       !open
@@ -58,7 +63,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                         ? "cancel.svg"
                         : "cancel-white.svg"
                     }`}
-                  ></img>
+                    alt="menu"
+                    width={24}
+                    height={24}
+                  ></Image>
                 </Popover.Button>
               </div>
             </div>
@@ -77,7 +85,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   {showResume && (
                     <Button
                       onClick={() =>
-                        window.open("mailto:hello@chetanverma.com")
+                        window.open("mailto:hassan@techemulsion.com")
                       }
                     >
                       Resume
@@ -85,7 +93,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   )}
 
                   <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
+                    onClick={() => window.open("https://calendly.com/hassanms/30min")}
                   >
                     Contact
                   </Button>
@@ -108,7 +116,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   )}
 
                   <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
+                    onClick={() => window.open("https://calendly.com/hassanms/30min")}
                   >
                     Contact
                   </Button>
@@ -145,17 +153,22 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("https://calendly.com/hassanms/30min")}>
               Contact
             </Button>
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                <img
+                <Image
                   className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
+                  src={`/images/${
+                    theme === "dark" ? "moon.svg" : "sun.svg"
+                  }`}
+                  alt="theme"
+                  width={24}
+                  height={24}
+                ></Image>
               </Button>
             )}
           </div>
@@ -174,7 +187,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("https://calendly.com/hassanms/30min")}>
               Contact
             </Button>
 
@@ -182,10 +195,15 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                <img
+                <Image
                   className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
+                  src={`/images/${
+                    theme === "dark" ? "moon.svg" : "sun.svg"
+                  }`}
+                  alt="theme"
+                  width={24}
+                  height={24}
+                ></Image>
               </Button>
             )}
           </div>
